@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
    });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const thumbnailimg = document.querySelectorAll(".thumbnail-image");
+  const thumbnailImages = document.querySelectorAll(".thumbnail-image");
 
-  thumbnailimg.forEach(function (image) {
+  thumbnailImages.forEach(function (image) {
     image.addEventListener("mouseenter", function () {
       // 호버 시 확대 효과 적용
       image.style.transform = "scale(1.1)";
@@ -54,8 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <style>
-
-
 body {
    margin-bottom: 300px; /* footer와 겹치지 않도록 페이지 하단 여백 추가 */
 }
@@ -72,7 +70,7 @@ footer {
 }
 
 br {
-    border-bottom: 1px dashed #ccc; /* 연한 회색 점선 선으로 설정 */
+   border-bottom: 1px dashed #ccc; /* 연한 회색 점선 선으로 설정 */
 }
 
 .container {
@@ -87,13 +85,13 @@ br {
 }
 
 h2 {
-    margin: 10px 0; /* 상단과 하단의 마진을 10px로 설정 */
-    background-color: #3EB75A;
-    color: #fff; /* 글자색을 흰색으로 설정 */
-    padding: 10px 20px; /* 내부 여백을 추가하여 텍스트 주변에 여백을 둠 */
-    border-radius: 8px; /* 라운드 코너를 주어 고급스러운 모양으로 만듭니다. */
-    text-align: center; /* 텍스트 가운데 정렬 */
-    font-size: 24px; /* 텍스트 크기를 조정하여 더 강조합니다. */
+   margin: 10px 0; /* 상단과 하단의 마진을 10px로 설정 */
+   background-color: #3EB75A;
+   color: #fff; /* 글자색을 흰색으로 설정 */
+   padding: 10px 20px; /* 내부 여백을 추가하여 텍스트 주변에 여백을 둠 */
+   border-radius: 8px; /* 라운드 코너를 주어 고급스러운 모양으로 만듭니다. */
+   text-align: center; /* 텍스트 가운데 정렬 */
+   font-size: 24px; /* 텍스트 크기를 조정하여 더 강조합니다. */
 }
 
 h3 {
@@ -105,20 +103,30 @@ h3 {
    width: 100%; /* 이미지 컨테이너의 너비를 50%로 설정 */
    height: 150px;
    border-radius: 10px; /* 이미지 모서리를 둥글게 만듭니다. */
-    transition: transform 0.2s ease; 
+   transition: transform 0.2s ease;
 }
 
+/* 이미지 호버 효과 스타일 */
+.centered-image.left-image {
+   transition: transform 0.3s; /* 이미지 크기 변경에 대한 트랜지션 */
+   cursor: pointer; /* 호버 시 커서 모양 변경 */
+}
+
+/* 호버 시 이미지 확대 */
+.centered-image.left-image:hover {
+   transform: scale(1.1); /* 이미지 확대 비율 */
+}
 
 /* 이미지 호버 시 확대 스타일 */
 .news-image:hover .centered-image {
-    transform: scale(1.1); /* 이미지를 1.1배로 확대 */
+   transform: scale(1.1); /* 이미지를 1.1배로 확대 */
 }
 
 /* 이미지 스타일 */
 .centered-image {
-    width: 20%; /* 이미지 너비를 100%로 설정하여 컨테이너에 맞게 크기를 조절합니다. */
-    height: auto; /* 이미지의 높이를 자동으로 조절하여 원본 비율을 유지합니다. */
-    border-radius: 10px; /* 이미지 모서리를 둥글게 만듭니다. */
+   width: 20%; /* 이미지 너비를 100%로 설정하여 컨테이너에 맞게 크기를 조절합니다. */
+   height: auto; /* 이미지의 높이를 자동으로 조절하여 원본 비율을 유지합니다. */
+   border-radius: 10px; /* 이미지 모서리를 둥글게 만듭니다. */
 }
 
 .half-width {
@@ -146,7 +154,6 @@ h3 {
    margin-left: 50px; /* 이미지 왼쪽에 10px 마진 추가 */
    margin-right: 50px; /* 이미지 오른쪽에 10px 마진 추가 */
 }
-
 
 /* 비디오 썸네일 컨테이너 스타일 */
 .video-thumbnails-container {
@@ -199,7 +206,7 @@ h3 {
 
 /* 펼쳐보기 버턴 */
 .FeedView-module__content_more {
-  display: none;
+   display: none;
 }
 
 /* 펼쳐보기 버튼을 중간으로 정렬 */
@@ -212,48 +219,41 @@ h3 {
 
 /* 버튼 스타일 */
 .FeedView-module__btn_more___zGfeT {
-    background-color: transparent; /* 배경색 지정 (원하는 색상으로 변경) */
-    color: #000; /* 글자색 지정 (원하는 색상으로 변경) */
-    border: none; /* 테두리 제거 */
-    border-radius: 5px; /* 라운드 코너를 주어 고급스러운 모양으로 만듭니다. */
-    padding: 10px 20px; /* 내부 여백을 추가하여 텍스트 주변에 여백을 둠 */
-    font-size: 18px; /* 텍스트 크기를 조정하여 더 강조합니다. */
-    cursor: pointer; /* 마우스 커서를 손가락 포인터로 변경하여 클릭 가능함을 나타냅니다. */
-    transition: background-color 0.3s ease; /* 배경색 변경 시 부드러운 전환 효과 추가 */
+   background-color: transparent; /* 배경색 지정 (원하는 색상으로 변경) */
+   color: #000; /* 글자색 지정 (원하는 색상으로 변경) */
+   border: none; /* 테두리 제거 */
+   border-radius: 5px; /* 라운드 코너를 주어 고급스러운 모양으로 만듭니다. */
+   padding: 10px 20px; /* 내부 여백을 추가하여 텍스트 주변에 여백을 둠 */
+   font-size: 18px; /* 텍스트 크기를 조정하여 더 강조합니다. */
+   cursor: pointer; /* 마우스 커서를 손가락 포인터로 변경하여 클릭 가능함을 나타냅니다. */
+   transition: background-color 0.3s ease; /* 배경색 변경 시 부드러운 전환 효과 추가 */
 }
 
 /* 버튼 호버 시 스타일 */
 .FeedView-module__btn_more___zGfeT:hover {
-    background-color: #937359; /* 호버 시 배경색 변경 (원하는 색상으로 설정) */
+   background-color: #937359; /* 호버 시 배경색 변경 (원하는 색상으로 설정) */
 }
-
 
 /* 추가 내용 컨테이너 스타일 */
 .additional-contents-container {
-  display: flex;
-  flex-direction: column; /* 수직 방향으로 나란히 정렬 */
-  align-items: flex-start; /* 왼쪽 정렬 */
+   display: flex;
+   flex-direction: column; /* 수직 방향으로 나란히 정렬 */
+   align-items: flex-start; /* 왼쪽 정렬 */
 }
 
 /* 추가 내용 이미지 스타일 */
-.additional-content .centered-image,
-.additional-content2 .centered-image, 
-.additional-content3 .centered-image {
-  width: 15%; /* 이미지 크기를 동일하게 설정 */
-  height: auto; /* 이미지 높이를 자동 조절하여 원본 비율 유지 */
-  border-radius: 10px; /* 이미지 모서리 둥글게 */
+.additional-content .centered-image, .additional-content2 .centered-image,
+   .additional-content3 .centered-image {
+   width: 15%; /* 이미지 크기를 동일하게 설정 */
+   height: auto; /* 이미지 높이를 자동 조절하여 원본 비율 유지 */
+   border-radius: 10px; /* 이미지 모서리 둥글게 */
 }
 
 /* 추가 내용 스타일 */
-.additional-content,
-.additional-content2, 
-.additional-content3 {
-  width: 100%;
-  margin-top: 100px;
-  
+.additional-content, .additional-content2, .additional-content3 {
+   width: 100%;
+   margin-top: 100px;
 }
-
-
 </style>
 
 </head>
@@ -270,7 +270,7 @@ h3 {
          <div class="news-image">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36619342&memberNo=1047921">
-               <img src="/img/bmw_xm3.jpg" alt="BMW XM3"
+               <img src="/images/bmw_xm3.jpg" alt="BMW XM3"
                class="centered-image left-image">
                <p>➡ the New 2023 BMW X3M - 모두가 만족할 고성능 SUV 이야기</p>
             </a>
@@ -281,7 +281,7 @@ h3 {
          <div class="news-image">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36614292&memberNo=11643111">
-               <img src="/img/c40.png" alt="VOLVO C40 RECHARGE"
+               <img src="/images/c40.png" alt="VOLVO C40 RECHARGE"
                class="centered-image left-image">
                <p>➡ 2024 볼보 C40 Recharge 시승기</p> 
             </a>
@@ -292,7 +292,7 @@ h3 {
          <div class="news-image">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36616001&memberNo=31245283">
-               <img src="/img/elatre.jpg" alt="LOTUS ELATRE ELECTRIC"
+               <img src="/images/elatre.jpg" alt="LOTUS ELATRE ELECTRIC"
                class="centered-image left-image">
                <p>➡ 로터스 하이퍼카... 마력 무려 990!</p>  
             </a>
@@ -303,7 +303,7 @@ h3 {
          <div class="news-image">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36615806&memberNo=783179">
-               <img src="/img/gmc.jpg" alt="GMC"
+               <img src="/images/gmc.jpg" alt="GMC"
                class="centered-image left-image">
                <p>➡ GMC 정통 아메리칸 럭셔리</p>
             </a>
@@ -321,7 +321,7 @@ h3 {
          <div class="additional-content" style="display: none;">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36605276&memberNo=11643111">
-               <img src="/img/ix1.jpg" alt="BMW"
+               <img src="/images/ix1.jpg" alt="BMW"
                class="centered-image left-image">
                <p>➡ BMW IX1 ELECTRIC</p>
             </a>
@@ -331,7 +331,7 @@ h3 {
          <div class="additional-content2" style="display: none;">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36623963&memberNo=37243826">
-               <img src="/img/bmw2.jpg" alt="BMW1" class="centered-image left-image">
+               <img src="/images/bmw2.jpg" alt="BMW1" class="centered-image left-image">
                <p>➡ BMW 키드니 그릴 </p>
             </a>
          </div>
@@ -340,7 +340,7 @@ h3 {
          <div class="additional-content3" style="display: none;">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36584270&memberNo=36780718">
-               <img src="/img/torres.jpeg" alt="torres" class="centered-image left-image">
+               <img src="/images/torres.jpeg" alt="torres" class="centered-image left-image">
                <p>➡ 토레스로 도전한 차박.. 그 결과는?! </p>
             </a>
          </div>
@@ -355,7 +355,7 @@ h3 {
          <div class="news-image">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36621834&memberNo=783179">
-               <img src="/img/Eclass.jpg" alt="Benz Eclass"
+               <img src="/images/Eclass.jpg" alt="Benz Eclass"
                class="centered-image left-image">
                <p>➡ Mercedes BENZ - E CLASS - 벤츠, 신형 E클래스 올터레인 공개</p>
             </a>
@@ -366,7 +366,7 @@ h3 {
       <div class="news-image">
          <a
             href="https://post.naver.com/viewer/postView.naver?volumeNo=36620953&memberNo=32022697">
-            <img src="/img/audi.jpg" alt="AUDI"
+            <img src="/images/audi.jpg" alt="AUDI"
             class="centered-image left-image">
             <p>➡ 아우디 Q4 e-트론 2024년형 공개</p> &nbsp; 
          </a>
@@ -377,7 +377,7 @@ h3 {
       <div class="news-image">
          <a
             href="https://post.naver.com/viewer/postView.naver?volumeNo=36619809&memberNo=25776368">
-            <img src="/img/ajur.jpg" alt="bentley"
+            <img src="/images/ajur.jpg" alt="bentley"
             class="centered-image left-image">
             <p>➡ 벤틀리 플라잉스퍼 아주르 S 공개</p> &nbsp; 
          </a>
@@ -388,19 +388,50 @@ h3 {
       <div class="news-image">
          <a
             href="https://post.naver.com/viewer/postView.nhn?volumeNo=36634130&memberNo=44489085&isInf=true">
-            <img src="/img/carnival.jpg" alt="kia"
+            <img src="/images/carnival.jpg" alt="kia"
             class="centered-image left-image">
             <p>➡ 기아 카니발 페이스리프트카 포착</p>
          </a>
       </div>
          <br>
          <br>
-         <br>
+
+         <hr>
+         <button type="button" class="FeedView-module__btn_more___zGfeT">
+            펼쳐보기 ➕ <i class="FeedView-module__ico_plus___dMU_U"> </i>
+         </button>
          <br>
          <hr>
-               <button type="button" class="FeedView-module__btn_more___zGfeT">
-                  펼쳐보기 ➕ <i class="FeedView-module__ico_plus___dMU_U"> </i>
-               </button>
+         <!-- 추가 내용을 감싸는 div -->
+      <div class="additional-content-container">
+         <div class="additional-content" style="display: none;">
+            <a
+               href="https://post.naver.com/viewer/postView.naver?volumeNo=36621367&memberNo=35797058">
+               <img src="/images/alfa.jpg" alt="BMW"
+               class="centered-image left-image">
+               <p>➡ AlfaRomeo 스트라달레 출시</p>
+            </a>
+         </div>   
+      </div>   
+      <div class="additional-content-container">
+         <div class="additional-content2" style="display: none;">
+            <a
+               href="https://post.naver.com/viewer/postView.naver?volumeNo=36597139&memberNo=5549852">
+               <img src="/images/chuseok.jpg" alt="BMW1" class="centered-image left-image">
+               <p>➡ 추석 연휴 장거리 운전 차량 관리 노하우 </p>
+            </a>
+         </div>
+      </div>
+      <div class="additional-content-container">
+         <div class="additional-content3" style="display: none;">
+            <a
+               href="https://post.naver.com/viewer/postView.naver?volumeNo=36633231&memberNo=24075080">
+               <img src="/images/ex30.jpg" alt="VOLVO" class="centered-image left-image">
+               <p>➡ 볼보 EX30 전기차 출시 임박 </p>
+            </a>
+         </div>
+      </div>
+   </div>
       </div>
 
    </div>
@@ -411,12 +442,12 @@ h3 {
       &nbsp;
       <div class="video-thumbnails-container">
          <a href="https://www.youtube.com/watch?v=mQDz-xWC16A&t=425s"> <img
-            src="/img/jcar.jpg" alt="Ferrari" class="thumbnail-image">
+            src="/images/jcar.jpg" alt="Ferrari" class="thumbnail-image">
             <p>제이특공대 - 페라리 점검</p>
          </a> <br>
          &nbsp;
          <a href="https://www.youtube.com/watch?v=aXmzsCiSbxo&t=10s"> <img
-            src="/img/mocar.jpg" alt="Bentley" class="thumbnail-image">
+            src="/images/mocar.jpg" alt="Bentley" class="thumbnail-image">
             <p>모카 벤틀리 시승기</p>
          </a>
       </div>
@@ -424,12 +455,12 @@ h3 {
       
       <div class="video-thumbnails-container">
          <a href="https://www.youtube.com/watch?v=f72yo3leWIQ"> <img
-            src="/img/oilcar.jpg" alt="engineoil" class="thumbnail-image">
+            src="/images/oilcar.jpg" alt="engineoil" class="thumbnail-image">
             <p>박병일 명장 엔진오일</p>
          </a> <br> 
          &nbsp;
          <a href="https://www.youtube.com/watch?v=18btQyFChc0&t=2s"> <img
-            src="/img/brake.jpg" alt="Brake" class="thumbnail-image">
+            src="/images/brake.jpg" alt="Brake" class="thumbnail-image">
             <p>브레이크 패드 잔량 확인법</p>
          </a>
       </div>
