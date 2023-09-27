@@ -30,6 +30,13 @@
 	    <version>5.3.20</version>
 	</dependency>
 	
+	<dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-jasper</artifactId>
+        <version>9.0.79</version> <!-- 현재 사용 중인 Tomcat 버전에 맞게 수정하세요 -->
+    </dependency>
+	
+	
 	<!-- 커넥션풀 :  db open/close 을 관리해준다 -->	
 	<dependency>
 	    <groupId>org.apache.commons</groupId>
@@ -86,6 +93,7 @@
 	    <artifactId>commons-fileupload</artifactId>
 	    <version>1.4</version>
 	</dependency>
+	
 	
 	
   

@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
    });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const thumbnailImages = document.querySelectorAll(".thumbnail-image");
+  const thumbnailimg = document.querySelectorAll(".thumbnail-image");
 
-  thumbnailImages.forEach(function (image) {
+  thumbnailimg.forEach(function (image) {
     image.addEventListener("mouseenter", function () {
       // 호버 시 확대 효과 적용
       image.style.transform = "scale(1.1)";
@@ -270,7 +270,7 @@ h3 {
          <div class="news-image">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36619342&memberNo=1047921">
-               <img src="/images/bmw_xm3.jpg" alt="BMW XM3"
+               <img src="/img/bmw_xm3.jpg" alt="BMW XM3"
                class="centered-image left-image">
                <p>➡ the New 2023 BMW X3M - 모두가 만족할 고성능 SUV 이야기</p>
             </a>
@@ -281,7 +281,7 @@ h3 {
          <div class="news-image">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36614292&memberNo=11643111">
-               <img src="/images/c40.png" alt="VOLVO C40 RECHARGE"
+               <img src="/img/c40.png" alt="VOLVO C40 RECHARGE"
                class="centered-image left-image">
                <p>➡ 2024 볼보 C40 Recharge 시승기</p> 
             </a>
@@ -292,7 +292,7 @@ h3 {
          <div class="news-image">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36616001&memberNo=31245283">
-               <img src="/images/elatre.jpg" alt="LOTUS ELATRE ELECTRIC"
+               <img src="/img/elatre.jpg" alt="LOTUS ELATRE ELECTRIC"
                class="centered-image left-image">
                <p>➡ 로터스 하이퍼카... 마력 무려 990!</p>  
             </a>
@@ -303,7 +303,7 @@ h3 {
          <div class="news-image">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36615806&memberNo=783179">
-               <img src="/images/gmc.jpg" alt="GMC"
+               <img src="/img/gmc.jpg" alt="GMC"
                class="centered-image left-image">
                <p>➡ GMC 정통 아메리칸 럭셔리</p>
             </a>
@@ -321,7 +321,7 @@ h3 {
          <div class="additional-content" style="display: none;">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36605276&memberNo=11643111">
-               <img src="/images/ix1.jpg" alt="BMW"
+               <img src="/img/ix1.jpg" alt="BMW"
                class="centered-image left-image">
                <p>➡ BMW IX1 ELECTRIC</p>
             </a>
@@ -331,7 +331,7 @@ h3 {
          <div class="additional-content2" style="display: none;">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36623963&memberNo=37243826">
-               <img src="/images/bmw2.jpg" alt="BMW1" class="centered-image left-image">
+               <img src="/img/bmw2.jpg" alt="BMW1" class="centered-image left-image">
                <p>➡ BMW 키드니 그릴 </p>
             </a>
          </div>
@@ -340,7 +340,7 @@ h3 {
          <div class="additional-content3" style="display: none;">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36584270&memberNo=36780718">
-               <img src="/images/torres.jpeg" alt="torres" class="centered-image left-image">
+               <img src="/img/torres.jpeg" alt="torres" class="centered-image left-image">
                <p>➡ 토레스로 도전한 차박.. 그 결과는?! </p>
             </a>
          </div>
@@ -355,7 +355,7 @@ h3 {
          <div class="news-image">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36621834&memberNo=783179">
-               <img src="/images/Eclass.jpg" alt="Benz Eclass"
+               <img src="/img/Eclass.jpg" alt="Benz Eclass"
                class="centered-image left-image">
                <p>➡ Mercedes BENZ - E CLASS - 벤츠, 신형 E클래스 올터레인 공개</p>
             </a>
@@ -366,7 +366,7 @@ h3 {
       <div class="news-image">
          <a
             href="https://post.naver.com/viewer/postView.naver?volumeNo=36620953&memberNo=32022697">
-            <img src="/images/audi.jpg" alt="AUDI"
+            <img src="/img/audi.jpg" alt="AUDI"
             class="centered-image left-image">
             <p>➡ 아우디 Q4 e-트론 2024년형 공개</p> &nbsp; 
          </a>
@@ -377,7 +377,7 @@ h3 {
       <div class="news-image">
          <a
             href="https://post.naver.com/viewer/postView.naver?volumeNo=36619809&memberNo=25776368">
-            <img src="/images/ajur.jpg" alt="bentley"
+            <img src="/img/ajur.jpg" alt="bentley"
             class="centered-image left-image">
             <p>➡ 벤틀리 플라잉스퍼 아주르 S 공개</p> &nbsp; 
          </a>
@@ -388,7 +388,7 @@ h3 {
       <div class="news-image">
          <a
             href="https://post.naver.com/viewer/postView.nhn?volumeNo=36634130&memberNo=44489085&isInf=true">
-            <img src="/images/carnival.jpg" alt="kia"
+            <img src="/img/carnival.jpg" alt="kia"
             class="centered-image left-image">
             <p>➡ 기아 카니발 페이스리프트카 포착</p>
          </a>
@@ -407,7 +407,7 @@ h3 {
          <div class="additional-content" style="display: none;">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36621367&memberNo=35797058">
-               <img src="/images/alfa.jpg" alt="BMW"
+               <img src="/img/alfa.jpg" alt="BMW"
                class="centered-image left-image">
                <p>➡ AlfaRomeo 스트라달레 출시</p>
             </a>
@@ -417,7 +417,7 @@ h3 {
          <div class="additional-content2" style="display: none;">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36597139&memberNo=5549852">
-               <img src="/images/chuseok.jpg" alt="BMW1" class="centered-image left-image">
+               <img src="/img/chuseok.jpg" alt="BMW1" class="centered-image left-image">
                <p>➡ 추석 연휴 장거리 운전 차량 관리 노하우 </p>
             </a>
          </div>
@@ -426,7 +426,7 @@ h3 {
          <div class="additional-content3" style="display: none;">
             <a
                href="https://post.naver.com/viewer/postView.naver?volumeNo=36633231&memberNo=24075080">
-               <img src="/images/ex30.jpg" alt="VOLVO" class="centered-image left-image">
+               <img src="/img/ex30.jpg" alt="VOLVO" class="centered-image left-image">
                <p>➡ 볼보 EX30 전기차 출시 임박 </p>
             </a>
          </div>
@@ -442,12 +442,12 @@ h3 {
       &nbsp;
       <div class="video-thumbnails-container">
          <a href="https://www.youtube.com/watch?v=mQDz-xWC16A&t=425s"> <img
-            src="/images/jcar.jpg" alt="Ferrari" class="thumbnail-image">
+            src="/img/jcar.jpg" alt="Ferrari" class="thumbnail-image">
             <p>제이특공대 - 페라리 점검</p>
          </a> <br>
          &nbsp;
          <a href="https://www.youtube.com/watch?v=aXmzsCiSbxo&t=10s"> <img
-            src="/images/mocar.jpg" alt="Bentley" class="thumbnail-image">
+            src="/img/mocar.jpg" alt="Bentley" class="thumbnail-image">
             <p>모카 벤틀리 시승기</p>
          </a>
       </div>
@@ -455,12 +455,12 @@ h3 {
       
       <div class="video-thumbnails-container">
          <a href="https://www.youtube.com/watch?v=f72yo3leWIQ"> <img
-            src="/images/oilcar.jpg" alt="engineoil" class="thumbnail-image">
+            src="/img/oilcar.jpg" alt="engineoil" class="thumbnail-image">
             <p>박병일 명장 엔진오일</p>
          </a> <br> 
          &nbsp;
          <a href="https://www.youtube.com/watch?v=18btQyFChc0&t=2s"> <img
-            src="/images/brake.jpg" alt="Brake" class="thumbnail-image">
+            src="/img/brake.jpg" alt="Brake" class="thumbnail-image">
             <p>브레이크 패드 잔량 확인법</p>
          </a>
       </div>
