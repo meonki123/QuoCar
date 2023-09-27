@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* styles.css */
+/* register.css */
 
 body {
     font-family: Arial, sans-serif;
@@ -13,12 +13,14 @@ body {
     height: 100vh;
 }
 
-.login-container {
+/* 본문 영역 스타일 */
+.registration-container {
     background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     text-align: center;
+    margin-top: 20px; /* 상단과 간격을 두기 위한 여백 추가 */
 }
 
 h1 {
@@ -40,22 +42,30 @@ label {
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="password"] {
+/* 선택 박스 스타일 */
+select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
 
+/* 제조사 이미지 스타일 */
+.manufacturer-image img {
+    max-width: 100%; /* 이미지가 컨테이너 너비를 초과하지 않도록 */
+    margin-top: 10px; /* 선택 박스와 간격을 두기 위한 여백 추가 */
+}
+
+/* 가입 버튼 스타일 */
 button {
     background-color: #007BFF;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
     border-radius: 3px;
     cursor: pointer;
     font-weight: bold;
+    margin-top: 10px; /* 이미지와 간격을 두기 위한 여백 추가 */
 }
 
 button:hover {
@@ -73,4 +83,11 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* 중복 확인 버튼에 대한 이 스타일을 추가하세요 */
+#checkDuplicate {
+    font-size: 14px; /* 필요한대로 글꼴 크기 조절 */
+    padding: 5px 5px; /* 버튼을 더 작게 만들려면 여백을 조절하세요 */
+    margin-left: 10px;
 }
