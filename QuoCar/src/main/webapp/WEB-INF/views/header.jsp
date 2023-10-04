@@ -1,12 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<<<<<<< HEAD
 
 
 
 <header>
     <a href="/" ><img src="/img/banana.jpg" alt="QUOCAR"></a>
     <h3 class="logo">Quo<span>Car</span></h3>
+=======
+    
+
+<header>
+   <h3 class="logo">Quo Car</h3>
+>>>>>>> refs/remotes/origin/master
    <nav class="gnb">
      <ul>
        <li><a href="index.jsp">소개</a></li>

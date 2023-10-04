@@ -7,6 +7,7 @@ body   { font-family: 'Malgun Gothic'; }
 a      { text-decoration : none;  }
 table  { border-collapse : collapse; border-spacing : 0; } 
 
+<<<<<<< HEAD
   /* 홈로고 스타일 */
  a [alt="QUOCAR"] {
 	position: absolute;
@@ -24,6 +25,10 @@ color: #FDEF8E;
 color: #133D86;
 }
 .logo   { height:150; background:#fffff;  text-align:center; line-height:100px; font-size: 50px; margin-bottom: 40px; }
+=======
+/* 메뉴 header, footer   */
+.logo   { height:150; background:#fffff; color:#000000; text-align:center; line-height:100px; font-size: 50px; margin-bottom: 40px; }
+>>>>>>> refs/remotes/origin/master
 .gnb    { height:40px; background:#fffff;  color:#000000; text-align:center; line-height:30px; margin-top: 20px;  }
 .gnb ul { display:inline-block; }
 .gnb ul:after { content:""; display:block; clear:both; }
