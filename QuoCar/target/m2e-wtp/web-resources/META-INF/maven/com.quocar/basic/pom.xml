@@ -21,7 +21,6 @@
 	    <artifactId>ojdbc6</artifactId>
 	    <version>11.2.0.4</version>
 	</dependency>
-<<<<<<< HEAD
 	
 
 	<!-- spring-messaging 챗봇 웹소켓 연결 -->
@@ -38,10 +37,7 @@
 	    <version>6.0.2</version>
 	</dependency>
 		
-=======
 
-	
->>>>>>> refs/remotes/origin/master
 	<!-- spring-jdbc  -->
 	<dependency>
 	    <groupId>org.springframework</groupId>
