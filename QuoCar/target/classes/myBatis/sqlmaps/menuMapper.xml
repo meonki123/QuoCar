@@ -7,7 +7,7 @@
 
    <!-- 목록 조회 : 등록순   -->
    <select id         = "MenuList"
-           resultType = "com.quocar.menus.vo.MenuVo"  >
+           resultType = "com.green.menus.vo.MenuVo"  >
    
       SELECT       MENU_ID
       	         , MENU_NAME
@@ -19,7 +19,7 @@
    
    <!-- 메뉴 조회 -->
    <select id          = "MenuGet"
-           resultType  = "com.quocar.menus.vo.MenuVo" >
+           resultType  = "com.green.menus.vo.MenuVo" >
         
         SELECT     MENU_ID
                  , MENU_NAME
@@ -72,7 +72,7 @@
     
       <insert id="MenuInsert2" >
       <selectKey keyProperty="menu_id,menu_seq"
-         resultType="com.quocar.menus.vo.MenuVo" 
+         resultType="com.green.menus.vo.MenuVo" 
 		 order="BEFORE" >
          SELECT menu_id,menu_seq
 			 FROM

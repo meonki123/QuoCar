@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Chat">  
+	
+	<select id="AnswersList"
+	        resultType="com.quocar.chat.vo.AnswersVo">
+	 	SELECT   ANSWER_ID
+                ,MODEL_ID
+                ,MECHANIC_ID
+                ,ANSWER_TEXT
+		FROM     ANSWERS
+		ORDER BY ANSWER_ID	ASC
+	
+	</select>
+	
+	<select id="CmodelList"
+	        resultType="com.quocar.chat.vo.CmodelVo">
+	 	SELECT    MODEL_ID
+                ,CAR_MODEL
+		FROM     CMODEL
+		ORDER BY MODEL_ID	ASC
+	
+	</select>
+	
+	<select id="MechanicList"
+	        resultType="com.quocar.chat.vo.MechanicVo">
+	 	SELECT  MECHANIC_ID
+               ,MECHANIC_NAME
+		FROM     MECHANIC
+		ORDER BY MECHANIC_ID	ASC
+	
+	</select>
+
+	<select id="AnswerGet"
+	        resultType="com.quocar.chat.vo.AnswersVo">
+	
+        SELECT ANSWER_TEXT
+        FROM   ANSWERS 
+        WHERE  MODEL_ID    = ${model_id}
+        AND    MECHANIC_ID = ${mechanic_id}
+        
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

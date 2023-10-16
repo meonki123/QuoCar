@@ -1,22 +1,20 @@
-package com.quocar.register.controller;
+package com.quocar.register.controller; // 패키지 이름을 com.quocar.register.controller로 변경
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class RegisterController {
 
-    @GetMapping("/register") // Change path to "/register"
-    public String showRegistrationPage(Model model) {
-        // Add the data needed for the model here and write the logic to go to the membership registration page.
-        // For example, you can add a list of manufacturers and image paths to your model.
-        // model.addAttribute("manufacturers", manufacturerList);
-        // model.addAttribute("manufacturerImagePaths", manufacturerImagePaths);
-
-        return "user/register"; // Returns the name of the JSP template for the sign-up page.
+    // 회원 가입 화면 요청
+    @RequestMapping("/register")
+    public String member(HttpSession session) {
+        session.setAttribute("category", "join");
+        return "user/register"; // "user" 폴더에서 register.jsp 파일을 로드합니다.
     }
-
-    // Membership registration processing logic can be added here.
+    
+	
 }
 

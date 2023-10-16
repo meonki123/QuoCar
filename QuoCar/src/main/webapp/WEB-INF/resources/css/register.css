@@ -1,93 +1,155 @@
 @charset "UTF-8";
-
-/* register.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+table tr td {
+	text-align: left;
 }
 
-/* 본문 영역 스타일 */
-.registration-container {
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    text-align: center;
-    margin-top: 20px; /* 상단과 간격을 두기 위한 여백 추가 */
+table tr td input[name=tel] {
+	width: 40px;
 }
 
-h1 {
-    margin-bottom: 20px;
-    color: #333;
+table tr td input[name=addr] {
+	width: calc(100% - 14px);
+	/* {속성값 !important } 우선순위 지정 */
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.ui-datepicker select {
+	vertical-align: middle;
+	height: 28px;
+}
+	
+.valid, .invalid { 
+	font-size: 11px;
+	font-weight: bold; 
 }
 
-.input-container {
-    margin-bottom: 15px;
-    text-align: left;
+.valid { color: green; }
+
+.invalid { color: red; }	
 }
 
-label {
-    font-weight: bold;
+a:link, a:visited {
+	text-decoration: none;
+	color: #000;
 }
 
-/* 선택 박스 스타일 */
-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+#content {
+	padding: 20px 0;
+	min-width: 1024px;	/* 창의 최소 크기 지정 */
 }
 
-/* 제조사 이미지 스타일 */
-.manufacturer-image img {
-    max-width: 100%; /* 이미지가 컨테이너 너비를 초과하지 않도록 */
-    margin-top: 10px; /* 선택 박스와 간격을 두기 위한 여백 추가 */
+img {
+	vertical-align: middle;	/* 세로축 가운데 정렬 */
 }
 
-/* 가입 버튼 스타일 */
-button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 3px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px; /* 이미지와 간격을 두기 위한 여백 추가 */
+table {
+	width: 80%;
+	margin: 0 auto;
+	border: 1px solid;
+	border-collapse: collapse;	/* 테두리 겹침 설정 collapse: 겹치지 않게 처리 */
 }
 
-button:hover {
-    background-color: #0056b3;
+table th, table td {
+	border: 1px solid;
+	padding: 5px 10px;
 }
 
-p {
-    margin-top: 10px;
+table td a:hover { font-weight: bold; }
+
+.btnSet { margin-top: 20px;	}
+
+a.btn-fill, a.btn-empty {
+	text-align: center;
+	padding: 3px 10px;
+	border:1px solid #3367d6;
+	border-radius: 3px;
+	box-shadow: 2px 2px 3px #022d72;
+	/* 오른쪽, 아래쪽, 번진 정도 */
 }
 
-a {
-    color: #007BFF;
-    text-decoration: none;
+a.btn-fill { 
+	background-color: #3367d6;
+	color: #fff;
 }
 
-a:hover {
-    text-decoration: underline;
+a.btn-empty { 
+	background-color: #fff;
+	color: #3367d6
 }
 
-/* 중복 확인 버튼에 대한 이 스타일을 추가하세요 */
-#checkDuplicate {
-    font-size: 14px; /* 필요한대로 글꼴 크기 조절 */
-    padding: 5px 5px; /* 버튼을 더 작게 만들려면 여백을 조절하세요 */
-    margin-left: 10px;
+a.btn-fill-s, a.btn-empty-s {
+	text-align: center;
+	padding: 1px 10px;
+	border:1px solid #c4dafc
+	border-radius: 3px;
+	box-shadow: 2px 2px 3px #022d72;
+	font-size: 13px;
+}
+
+a.btn-fill-s { 
+	background-color: #bacdfa;
+}
+
+a.btn-empty-s { 
+	background-color: #fff;
+}
+
+.btnSet a:not(:first-child) {
+	margin-left: 3px;
+}
+
+a:hover { cursor:pointer; }
+
+input {
+	height: 22px;
+	padding: 3px 5px;
+	font-size: 15px;
+}
+
+input[type=radio] {
+	width: 18px;
+	margin: 0 5px 3px;
+	vertical-align: middle;
+}
+
+table tr td label:not(:last-child) {
+	margin-right: 20px;	
+}
+
+.w-pct60 { width: 60% }
+.w-pct70 { width: 70% }
+.w-pct80 { width: 80% }
+.w-px40 { width: 40px }
+.w-px60 { width: 60px }
+.w-px80 { width: 80px }
+.w-px100 { width: 100px }
+.w-px120 { width: 120px }
+.w-px140 { width: 140px }
+.w-px160 { width: 160px }
+.w-px180 { width: 180px }
+.w-px200 { width: 200px }
+
+.left { text-align: left }
+.right { text-align: right }
+
+.font-img { cursor: pointer; }
+
+
+/* 중복아이디 존재하지 않는 경우 */
+.id_input_re_1{
+color : green;
+display : none;
+}
+
+/* 중복아이디 존재하는 경우 */
+.id_input_re_2{
+color : red;
+display : none;
 }

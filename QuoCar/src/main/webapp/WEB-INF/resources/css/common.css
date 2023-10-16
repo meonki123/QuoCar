@@ -1,20 +1,24 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
 
 /*  전체 적용 스타일 */
 *      { margin:0;  padding:0;  }
 ul,li  { list-style:none;  }
-body   { font-family: 'Malgun Gothic'; }
+body   { font-family: 'Noto Sans KR', sans-serif; }
 a      { text-decoration : none;  }
 table  { border-collapse : collapse; border-spacing : 0; } 
 
-<<<<<<< HEAD
   /* 홈로고 스타일 */
  a [alt="QUOCAR"] {
-	position: absolute;
-	left: 10vw;
-	width: 100px;
-	height: auto;
+   position: absolute;
+   padding: 30px 50px;
+   left: 10vw;
+   width: 100px;
+   height: auto;
 } 
+
+
 
 /* 메뉴 header, footer   */
 
@@ -25,17 +29,13 @@ color: #FDEF8E;
 color: #133D86;
 }
 .logo   { height:150; background:#fffff;  text-align:center; line-height:100px; font-size: 50px; margin-bottom: 40px; }
-=======
-/* 메뉴 header, footer   */
-.logo   { height:150; background:#fffff; color:#000000; text-align:center; line-height:100px; font-size: 50px; margin-bottom: 40px; }
->>>>>>> refs/remotes/origin/master
-.gnb    { height:40px; background:#fffff;  color:#000000; text-align:center; line-height:30px; margin-top: 20px;  }
-.gnb ul { display:inline-block; }
-.gnb ul:after { content:""; display:block; clear:both; }
-.gnb li       { float:left; }
-.gnb a        { display:block; padding:0 40px; color:#000; font-size:25px;
+.category    { height:40px; background:#fffff;  color:#000000; text-align:center; line-height:30px; margin-top: 20px;  }
+.category ul { display:inline-block; }
+.category ul:after { content:""; display:block; clear:both; }
+.category li       { float:left; }
+.category a        { display:block; padding:0 40px; color:#000; font-size:25px;
                 transition:0.3s;  font-weight: bold; }
-.gnb a:hover  { background:#52B755; }
+.category a:hover  { background:#52B755; }
 .footer       { text-transform : uppercase; text-align: center; font-size: 11px;
                 background: #666; color:#fff; padding:20px 0;    }
                 
@@ -59,3 +59,25 @@ color: #133D86;
                     background: #444; color:#fff;  }
                     
 /* 중복체크 버튼 */
+
+footer {
+   position: fixed; /* 화면 아래에 고정 */
+   left: 0;
+   bottom: 0;
+   width: 100%; /* 전체 너비로 확장 */
+   background-color: #333; /* 배경색 지정 (원하는 색상으로 변경) */
+   color: #fff; /* 글자색 지정 (원하는 색상으로 변경) */
+   text-align: center; /* 텍스트 가운데 정렬 */
+   padding: 10px 0; /* 상하 여백 설정 */
+}
+
+.fixed-button {
+   position: fixed;
+   font-size: 25px;
+   bottom: 80px; /* 위에서 20px 거리에 고정 */
+   right: 60px; /* 오른쪽에서 20px 거리에 고정 */
+   padding: 30px 30px;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+}
