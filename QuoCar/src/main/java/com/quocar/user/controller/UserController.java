@@ -28,10 +28,10 @@ public class UserController {
 
     // 아이디 중복 확인
     @ResponseBody
-    @RequestMapping(value = "/idChk", method = RequestMethod.POST)
-    public int idChk(UserVo vo) {
+    @RequestMapping(value = "/idCheck", method = RequestMethod.POST)
+    public int idCheck(UserVo vo) {
         try {
-            return userService.idChk(vo);
+            return userService.idCheck(vo);
         } catch (Exception e) {
             System.out.println("아이디 중복 확인 실패: " + e.getMessage());
             throw new RuntimeException(e);

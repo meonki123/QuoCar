@@ -18,7 +18,7 @@ public interface UserDao {
 	public int passChk(UserVo vo) throws Exception;
 	
 	// 아이디 중복체크
-	public int idChk(UserVo vo) throws Exception;
+	public int idCheck(UserVo vo) throws Exception;
 
 	
 }

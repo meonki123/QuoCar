@@ -44,8 +44,8 @@ public class UserServiceImpl implements UserService {
 	}
 	// 아이디 중복 확인
 	@Override
-	public int idChk(UserVo vo) throws Exception {
-	    int result = userDao.idChk(vo);
+	public int idCheck(UserVo vo) throws Exception {
+	    int result = userDao.idCheck(vo);
 	    return result;
 	}
 

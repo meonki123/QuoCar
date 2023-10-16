@@ -14,5 +14,5 @@ public interface UserService {
     
     public int passChk(UserVo vo) throws Exception; // 패스워드 중복 체크
     
-    public int idChk(UserVo vo) throws Exception; // 아이디 중복 체크
+    public int idCheck(UserVo vo) throws Exception; // 아이디 중복 체크
 }

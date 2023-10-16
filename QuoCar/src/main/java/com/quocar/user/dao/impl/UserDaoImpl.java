@@ -42,14 +42,14 @@ public class UserDaoImpl implements UserDao {
 	}
     // 아이디 중복 체크
 	@Override
-	public int idChk(UserVo vo){
-		int result = sqlSession.selectOne("userMapper.idChk", vo);
+	public int idCheck(UserVo vo){
+		int result = sqlSession.selectOne("User.idCheck", vo);
 		return result;
 	}
     // 패스워드 중복 체크
 	@Override
 	public int passChk(UserVo vo) {
-		int result = sqlSession.selectOne("userMapper.passChk", vo);
+		int result = sqlSession.selectOne("User.passChk", vo);
 		return result;
 	}
 
