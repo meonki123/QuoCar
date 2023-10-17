@@ -21,7 +21,7 @@
     <table class="w-pct60">
         <!-- 이름 입력 필드 -->
         <tr>
-            <th class="w-px160">* 이름</th>
+            <th class="w-px160" >* 이름</th>
             <td><input type="text" name="name" /></td>
         </tr>
         <!-- 아이디 입력 필드  -->
@@ -56,7 +56,7 @@
         
         <!-- 성별 선택 라디오 버튼 -->
         <tr>
-            <th>* 성별</th>
+            <th> 성별</th>
             <td>
                 <label><input type="radio" name="gender" value="남성" checked/>남성</label>
                 <label><input type="radio" name="gender" value="여성" />여성</label>
@@ -65,7 +65,7 @@
         
         <!-- 이메일 입력 필드 -->
         <tr>
-            <th>* 이메일</th>
+            <th> 이메일</th>
             <td>
                 <input type="text" name="email" />
                 <div class="valid">이메일을 입력하세요</div>
@@ -73,7 +73,7 @@
         </tr>
         <!-- 생년월일 입력 필드 (달력) -->
         <tr>
-            <th>* 생년월일</th>
+            <th> 생년월일</th>
             <td>
                 <input type="text" name="birthdate" id="datepicker" />                
             </td>
