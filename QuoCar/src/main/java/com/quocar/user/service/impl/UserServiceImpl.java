@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.quocar.user.dao.UserDao;
 import com.quocar.user.service.UserService;
-import com.quocar.user.vo.UserVo;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -19,35 +19,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void saveUser(UserVo user) {
-        // UserDao를 사용하여 사용자 데이터를 데이터베이스에 저장하는 로직을 구현합니다.
-        userDao.saveUser(user);
+    public int register(HashMap<String, Object> map) {
+        // 사용자 등록 로직 구현
+        int result = userDao.insertUser(map); // 사용자 정보를 데이터베이스에 저장
+        return result;
     }
 
     @Override
-    public UserVo loginUser(String userid, String password) {
-        // UserDao를 사용하여 사용자 로그인을 인증하는 로직을 구현합니다.
-        return userDao.getLogin(userid, password);
+    public boolean login(HashMap<String, Object> map) {
+        // 로그인 확인 로직 구현
+        return userDao.checkPassword(map); // 사용자의 아이디와 비밀번호를 검사하여 로그인 확인
     }
 
-	@Override
-	public UserVo getLogin(HashMap<String, Object> map) {
-		
-		UserVo  userVo  =  userDao.getLogin( map );  
-		return  userVo;
-	}
-	// 패스워드 체크
-	@Override
-	public int passChk(UserVo vo) throws Exception {
-	    int result = userDao.passChk(vo);
-	    return result;
-	}
-	// 아이디 중복 확인
-	@Override
-	public int idCheck(UserVo vo) throws Exception {
-	    int result = userDao.idCheck(vo);
-	    return result;
-	}
-
-		
+    @Override
+    public boolean checkIdDuplication(HashMap<String, Object> map) {
+        // 아이디 중복 확인 로직 구현
+        return userDao.checkIdDuplication(map); // 데이터베이스에서 아이디 중복 여부 확인
+    }
 }

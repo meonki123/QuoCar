@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="User">
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<insert id="insertUser" parameterType="com.quocar.user.vo.UserVo">
-    INSERT INTO QUSER (NAME, USER_ID, PASSWORD, GENDER, EMAIL, BIRTHDATE, CAR_MANUFACTURER, CAR_MODEL)
-    VALUES (#{name}, #{userId}, #{password}, #{gender}, #{email}, #{birthdate}, #{carManufacturer}, #{carModel})
-</insert>
-
-
-    <select id="selectUserById" resultType="com.quocar.user.vo.UserVo">
-        SELECT id, name, user_id, password, gender, email, birthdate, car_manufacturer, car_model
-        FROM QUSER
-        WHERE id = #{id}
-    </select>
-
-    <select id="selectUserList">
-        SELECT id, name, user_id, password, gender, email, birthdate, car_manufacturer, car_model
-        FROM QUSER
-    </select>
-    
-    <!-- 패스워드 체크 -->
-    <select id="passChk" resultType="int">
-	   SELECT COUNT(*) 
-	   FROM  QUSER
-       WHERE USERID = #{userId}
-         AND PASSWORD = #{password}
-    </select>
-
-    <!-- 아이디 중복 체크 -->
-    <select id="idCheck" resultType="int">
-    SELECT COUNT(*) 
-    FROM  QUSER
-    WHERE USERID = #{userId}
-    </select>
-
-
+<mapper namespace="User">  
+ 
+ <insert id="insertUser">
+    INSERT INTO QUSER (
+      ID,
+      NAME,
+      USERID,
+      PASSWORD,
+      GENDER,
+      EMAIL,
+      BIRTHDATE,
+      CAR_MANUFACTURER,
+      CAR_MODEL
+    ) VALUES (
+      (SELECT NVL(MAX(ID),0)+1 FROM QUSER ),
+      #{name},
+      #{userId},
+      #{password},
+      #{gender},
+      #{email},
+      #{birthdate},
+      #{carManufacturer},
+      #{carModel}
+    )
+  </insert>
+  
+     
 </mapper>
+
+
+
+
+
+   

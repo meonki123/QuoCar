@@ -1,41 +1,24 @@
 package com.quocar.user.vo;
 
+import java.util.Date;
+
 public class UserVo {
-    // Fields
-    private Long id;
+    private int id;
     private String name;
-    private String userId;
+    private String userid;
     private String password;
     private String gender;
     private String email;
-    private String birthdate;
+    private Date birthdate;
     private String carManufacturer;
     private String carModel;
 
-    // Constructor
-    public UserVo() {
-    }
-
-    public UserVo(Long id, String name, String userId, String password, String gender, String email, String birthdate,
-            String carManufacturer, String carModel) {
-        super();
-        this.id = id;
-        this.name = name;
-        this.userId = userId;
-        this.password = password;
-        this.gender = gender;
-        this.email = email;
-        this.birthdate = birthdate;
-        this.carManufacturer = carManufacturer;
-        this.carModel = carModel;
-    }
-
-    // Getter and Setter methods
-    public Long getId() {
+    // Getter 및 Setter 메서드
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -47,12 +30,12 @@ public class UserVo {
         this.name = name;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getPassword() {
@@ -79,11 +62,11 @@ public class UserVo {
         this.email = email;
     }
 
-    public String getBirthdate() {
+    public Date getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(String birthdate) {
+    public void setBirthdate(Date birthdate) {
         this.birthdate = birthdate;
     }
 
@@ -101,13 +84,5 @@ public class UserVo {
 
     public void setCarModel(String carModel) {
         this.carModel = carModel;
-    }
-
-    // toString
-    @Override
-    public String toString() {
-        return "UserVo [id=" + id + ", name=" + name + ", userId=" + userId + ", password=" + password + ", gender="
-                + gender + ", email=" + email + ", birthdate=" + birthdate + ", carManufacturer=" + carManufacturer
-                + ", carModel=" + carModel + "]";
     }
 }

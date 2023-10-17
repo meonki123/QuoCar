@@ -17,20 +17,6 @@ public class HomeController {
 		return  "home";      // /WEB-INF/views/ home .jsp
 	}
 	
-	// 로그인
-	@RequestMapping("/login")
-	public  String   login() {
-		return  "user/login";
-	}
-	
-	// 회원가입
-	@RequestMapping("/register")
-	public  String   register() {
-
-		return  "user/register";
-
-	}
-	
 }
 
 
