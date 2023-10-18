@@ -20,7 +20,7 @@ public class HomeController {
     }
     
     // 회원가입 화면
-    @RequestMapping("/register")
+    @RequestMapping("/user/register")
     public  String  register() {
     	return  "user/register";
     }
