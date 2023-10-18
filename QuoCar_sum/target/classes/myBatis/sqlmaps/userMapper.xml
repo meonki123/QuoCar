@@ -6,20 +6,19 @@
 <mapper namespace="User">  
  
 <select id="loginCheck" resultType="String">
-  SELECT NAME
-  FROM  QUSER
-  WHERE USERID = #{userid} AND PASSWORD = #{password}
+   SELECT NAME AS userName FROM QUSER
+   WHERE USERID = #{userid} AND PASSWORD = #{password}
 </select>
 
- <select id="viewUser" resultType="com.quocar.user.vo.UserVo">
-        SELECT 
-            NAME AS Name,
-            ID AS Id,
-            EMAIL AS Email,
-            BIRTHDATE AS BirthDate
-        FROM QUSER
-        WHERE USERID = #{userid} AND PASSWORD = #{password}
-    </select>
+<select id="viewUser" resultType="com.quocar.user.vo.UserVo">
+   SELECT
+       NAME AS userName,
+       USERID AS userId,
+       EMAIL AS userEmail,
+       BIRTHDATE AS userRegdate
+   FROM QUSER
+   WHERE USERID = #{userid} AND PASSWORD = #{password}
+</select>
     
  <insert id="insertUser">
     INSERT INTO QUSER (
@@ -43,7 +42,7 @@
       #{birthdate},
       #{carManufacturer},
       #{carModel},
-      #{userName}
+      #{username}
     )
   </insert>
   

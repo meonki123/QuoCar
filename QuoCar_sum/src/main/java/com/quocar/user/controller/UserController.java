@@ -19,7 +19,7 @@ import com.quocar.user.service.UserService;
 import com.quocar.user.vo.UserVo;
 
 @Controller
-
+@RequestMapping("/user/*") // 모든맵핑은 /member/를 상속
 public class UserController {
 
     private final UserService userService;
@@ -61,9 +61,14 @@ public class UserController {
         return isDuplicate;
     }
     
-
+    // 01. 로그인 화면 
+    @RequestMapping("login.do")
+    public String login(){
+        return "user/login";    // views/member/login.jsp로 포워드
+    }
+    
     // 02. 로그인 처리
-    @RequestMapping("loginCheck")
+    @RequestMapping("loginCheck.do")
     public ModelAndView loginCheck(@ModelAttribute UserVo vo, HttpSession session){
         boolean result = userService.loginCheck(vo, session);
         ModelAndView mav = new ModelAndView();
@@ -80,7 +85,7 @@ public class UserController {
     }
        
     // 03. 로그아웃 처리
-    @RequestMapping("logout")
+    @RequestMapping("logout.do")
     public ModelAndView logout(HttpSession session){
         userService.logout(session);
         ModelAndView mav = new ModelAndView();

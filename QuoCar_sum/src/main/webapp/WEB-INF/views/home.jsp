@@ -479,9 +479,6 @@ h3 {
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/include/header.jsp" />
-	<c:if test="${msg == 'success'}">
-    <h2>${sessionScope.userName}(${sessionScope.userid})님 환영합니다.</h2>
-    </c:if>
 	<div class="container">
 		<div class="content">
 			<h2>시승기</h2>

@@ -39,7 +39,7 @@
         <tr>
             <th>* 닉네임</th>
             <td>
-                <input type="text" name="userName" class="uname" id="userName" /><br>
+                <input type="text" name="username" class="uname" id="username" /><br>
                 <div class='valid'>사용할 닉네임을 입력하세요 <br>(공백 제외 영어 또는 한글로만 입력하세요)</div>
             </td>
         </tr>
@@ -187,7 +187,7 @@
 
             // 아이디 중복 확인을 서버에 요청하고 처리하는 코드 추가
             $.ajax({
-                url: "/user/register",
+                url: "${path}/user/register",
                 type: "post",
                 dataType: "json",
                 data: { "userid": userid },
