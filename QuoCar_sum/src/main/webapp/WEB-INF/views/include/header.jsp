@@ -17,7 +17,7 @@
                     <li><a href="${path}/user/login">로그인</a></li>
                 </c:when>
                 <c:otherwise>
-                    <li>${sessionScope.userid}님이 로그인중입니다. 
+                    <li>${sessionScope.userid}(${sessionScope.username})님이 로그인중입니다. 
                     <a href="${path}/user/logout">로그아웃</a></li>
                 </c:otherwise>
             </c:choose>

@@ -51,7 +51,7 @@
                     </div>
                 </c:if>
             <c:if test="${msg == 'logout'}">
-                    <div style="color: red">
+                    <div style="color: red; margin: 10px 0px 0 33px;">
                         로그아웃되었습니다.
                     </div>
                 </c:if>
