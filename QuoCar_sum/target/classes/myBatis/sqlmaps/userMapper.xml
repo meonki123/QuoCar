@@ -3,23 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="User">  
- 
-<select id="loginCheck" resultType="String">
-   SELECT NAME AS userName FROM QUSER
-   WHERE USERID = #{userid} AND PASSWORD = #{password}
-</select>
+<mapper namespace="User">
 
-<select id="viewUser" resultType="com.quocar.user.vo.UserVo">
-   SELECT
-       NAME AS userName,
-       USERID AS userId,
-       EMAIL AS userEmail,
-       BIRTHDATE AS userRegdate
-   FROM QUSER
-   WHERE USERID = #{userid} AND PASSWORD = #{password}
-</select>
-    
  <insert id="insertUser">
     INSERT INTO QUSER (
       ID,
@@ -45,6 +30,21 @@
       #{username}
     )
   </insert>
+ 
+<select id="loginCheck" resultType="String">
+   SELECT NAME AS userName FROM QUSER
+   WHERE USERID = #{userid} AND PASSWORD = #{password}
+</select>
+
+<select id="viewUser" resultType="com.quocar.user.vo.UserVo">
+   SELECT
+       NAME AS username,
+       USERID AS userid,
+       EMAIL AS useremail,
+       BIRTHDATE AS userregdate
+   FROM QUSER
+   WHERE USERID = #{userid} AND PASSWORD = #{password}
+</select>
   
      
 </mapper>

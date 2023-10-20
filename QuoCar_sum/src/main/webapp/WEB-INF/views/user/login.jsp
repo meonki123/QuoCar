@@ -24,7 +24,7 @@
                 return;
             }
             // 폼 내부의 데이터를 전송할 주소
-            document.form1.action="${path}/user/loginCheck.do"
+            document.form1.action="/user/loginCheck"
             // 제출
             document.form1.submit();
         });
@@ -37,11 +37,11 @@
         <form name="form1" method="POST">
             <div class="input-container">
                 <label for="username">아이디:</label>
-                <input type="text" name="userid" id="userid">
+                <input type="text" name="userid" id="userid" required>
             </div>
             <div class="input-container">
                 <label for="password">비밀번호:</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" required>
             </div>
             <button type="button" id="btnLogin">로그인</button>
             <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>

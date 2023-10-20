@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ import com.quocar.user.service.UserService;
 import com.quocar.user.vo.UserVo;
 
 @Controller
-@RequestMapping("/user/*") // 모든맵핑은 /member/를 상속
+@RequestMapping("/user") // 모든맵핑은 /user/를 상속
 public class UserController {
 
     private final UserService userService;
@@ -28,8 +29,16 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
+   // 사용자 등록 화면을 렌더링합니다.
+    // /register?id=3
+    @GetMapping("/register")
+    public String register() {
+    
+        return "user/register";
+    }
+    
  // 사용자 등록 요청을 처리합니다.
+    //  /user/insertUser
     @RequestMapping("/insertUser")
     public String registerPost(@RequestParam HashMap<String, Object> map, Model model) {
         // 아이디 중복 확인
@@ -39,12 +48,11 @@ public class UserController {
        // }
     	
     	//map.put("id", id);
-
         // 사용자 등록
         int result = userService.register(map);
 
         if (result > 0) {
-            return "redirect:/login"; // 사용자 등록 성공 시 로그인 화면으로 리다이렉트
+            return "redirect:/user/login"; // 사용자 등록 성공 시 로그인 화면으로 리다이렉트
         } else {
             model.addAttribute("error", "등록 실패");
             return "user/register";
@@ -62,13 +70,13 @@ public class UserController {
     }
     
     // 01. 로그인 화면 
-    @RequestMapping("login.do")
+    @RequestMapping("login")
     public String login(){
         return "user/login";    // views/member/login.jsp로 포워드
     }
     
     // 02. 로그인 처리
-    @RequestMapping("loginCheck.do")
+    @RequestMapping("loginCheck")
     public ModelAndView loginCheck(@ModelAttribute UserVo vo, HttpSession session){
         boolean result = userService.loginCheck(vo, session);
         ModelAndView mav = new ModelAndView();
@@ -85,7 +93,7 @@ public class UserController {
     }
        
     // 03. 로그아웃 처리
-    @RequestMapping("logout.do")
+    @RequestMapping("logout")
     public ModelAndView logout(HttpSession session){
         userService.logout(session);
         ModelAndView mav = new ModelAndView();

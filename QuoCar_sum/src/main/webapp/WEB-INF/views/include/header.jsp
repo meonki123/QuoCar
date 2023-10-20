@@ -14,11 +14,11 @@
 
             <c:choose>
                 <c:when test="${sessionScope.userid == null}">
-                    <li><a href="${path}/user/login.do">로그인</a></li>
+                    <li><a href="${path}/user/login">로그인</a></li>
                 </c:when>
                 <c:otherwise>
                     <li>${sessionScope.userid}님이 로그인중입니다. 
-                    <a href="${path}/user/logout.do">로그아웃</a></li>
+                    <a href="${path}/user/logout">로그아웃</a></li>
                 </c:otherwise>
             </c:choose>
         </ul>

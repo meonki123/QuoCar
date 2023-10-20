@@ -17,7 +17,7 @@
 
 <!-- 사용자 등록을 위한 폼 시작 -->
 
-<form id="registrationForm" action="/insertUser" method="POST">    
+<form id="registrationForm" action="/user/insertUser" method="POST">   
     <table class="w-pct60">
         <!-- 이름 입력 필드 -->
         <tr>
@@ -113,7 +113,7 @@
     </table>
 
     <!-- 회원 가입 버튼 -->
-    <input type="submit" value="가입하기">
+    <input type="submit" value="가입하기" class="register-button">
 </form>
 
 
@@ -180,14 +180,14 @@
                 passwordError.textContent = "";
             }
         });
-
+       
         // 아이디 중복 확인 버튼 클릭 이벤트 처리
         document.getElementById("idCheckButton").addEventListener("click", function() {
             var userid = document.getElementById("userid").value;
 
             // 아이디 중복 확인을 서버에 요청하고 처리하는 코드 추가
             $.ajax({
-                url: "${path}/user/register",
+                url: "/user/register",
                 type: "post",
                 dataType: "json",
                 data: { "userid": userid },
@@ -203,25 +203,20 @@
                 }
             });
         });
-
-        // 폼 제출 후 실행되는 부분
+        
+        // submit 버튼 클릭시 입력항목을 채크
         $("#registrationForm").on("submit", function(e) {
-            e.preventDefault(); // 폼 제출 방지 (alert 띄우기 위해)
+            //e.preventDefault(); // 폼 제출 방지 (alert 띄우기 위해)
 
-            // 폼 데이터를 서버에 제출 (실제로는 서버로 보내야 합니다)
-            $.ajax({
-                url: "/insertUser", // 실제 서버 엔드포인트로 수정
-                type: "POST",
-                data: $(this).serialize(), // 폼 데이터 직렬화
-                success: function(response) {
-                    // 가입이 성공적으로 처리되면 메시지를 표시
-                    $("#registration-success").show();
-                    alert("가입이 완료되었습니다. 이제 로그인하세요.");
-                },
-                error: function() {
-                    alert("가입 중 오류가 발생했습니다. 다시 시도해주세요.");
-                }
-            });
+            // * 항목을 체크
+            if( $('#userid').val() == '') {
+            	alert('아이디를 입력하세요');
+            	return false;
+            } else {
+            	
+            }
+            return  true;
+             
         });
     });
 

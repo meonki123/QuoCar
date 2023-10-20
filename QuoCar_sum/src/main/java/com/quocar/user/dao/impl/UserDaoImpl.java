@@ -22,6 +22,12 @@ public class UserDaoImpl implements UserDao {
     public int insertUser(HashMap<String, Object> map) {
         return sqlSession.insert("User.insertUser", map);
     }
+    // 비밀번호 확인
+    @Override
+    public boolean checkPassword(HashMap<String, Object> map) {
+        int count = sqlSession.selectOne("User.checkPassword", map);
+        return count == 1; // 1개의 결과가 있는 경우 로그인 성공
+    }
     
     // 아이디 중복확인
     @Override

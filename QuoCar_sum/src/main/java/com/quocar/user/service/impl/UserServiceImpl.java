@@ -34,6 +34,12 @@ public class UserServiceImpl implements UserService {
         return userDao.checkIdDuplication(map); // 데이터베이스에서 아이디 중복 여부 확인
     }
 
+    @Override
+    public boolean login(HashMap<String, Object> map) {
+        // 로그인 확인 로직 구현
+        return userDao.checkPassword(map); // 사용자의 아이디와 비밀번호를 검사하여 로그인 확인
+    }
+    
     // 01_01. 회원 로그인체크
     @Override
     public boolean loginCheck(UserVo vo, HttpSession session) {
