@@ -2,15 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <header>
-    <a href="/"><img src="/img/opencar.png" alt="QUOCAR"></a>
-    <a href="/"><h3 class="logo">Quo<span>Car</span></h3></a>
-    <nav class="category">
+    <a href="/"><h3 class="logo">Quo<span>CAR</span></h3></a>
+   <nav class="category">
         <ul>
-            <li><a href="index.jsp">소개</a></li>
-            <li><a href="list2.jsp">보험지식</a></li>
-            <li><a href="mechanic.jsp">정비</a></li>
-            <li><a href="/board/list.do">커뮤니티</a></li>
-            <li><a href="index.jsp">고객센터</a></li>
+            <li><a href="/insurance">보험지식</a></li>
+         <li><a href="/mechanic">정비</a></li>
+         <li><a href="/board/list.do">커뮤니티</a></li>
+         <li><a href="/Csc/List2?csc_id=CSC01">고객센터</a></li>
 
             <c:choose>
                 <c:when test="${sessionScope.userid == null}">

@@ -114,6 +114,8 @@
 
     <!-- 회원 가입 버튼 -->
     <input type="submit" value="가입하기" class="register-button">
+    <!-- 취소 버튼 -->
+    <button onclick="location.href='/'" class="cancel-button">취소</button>
 </form>
 
 
