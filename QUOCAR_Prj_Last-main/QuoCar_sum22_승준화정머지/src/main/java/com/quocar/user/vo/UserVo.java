@@ -13,7 +13,9 @@ public class UserVo {
     private Date   birthdate;
     private String carManufacturer;
     private String carModel;
-
+    private String newPassword;
+    private String confirmPassword;
+    
     // Getter 및 Setter 메서드
     public int getId() {
         return id;
@@ -93,4 +95,22 @@ public class UserVo {
     public void setCarModel(String carModel) {
         this.carModel = carModel;
     }
+
+	public String getNewPassword() {
+		return newPassword;
+	}
+
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+	
+	
 }

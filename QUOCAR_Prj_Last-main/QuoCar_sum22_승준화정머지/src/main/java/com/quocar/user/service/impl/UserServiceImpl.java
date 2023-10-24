@@ -76,5 +76,19 @@ public class UserServiceImpl implements UserService {
         // 세션 정보를 초기화 시킴
         session.invalidate();
     }
+    
+    @Override
+    public void updateUserInfo(UserVo vo) {
+        // 데이터베이스에서 현재 비밀번호 가져오기
+        String currentPasswordFromDatabase = userDao.getPasswordByUserId(vo.getUserid());
 
+        // 사용자가 입력한 현재 비밀번호와 데이터베이스의 비밀번호 비교
+        if (currentPasswordFromDatabase.equals(vo.getPassword())) {
+            // 비밀번호가 일치하면 데이터베이스 업데이트
+            userDao.updateUserInfo(vo);
+        } else {
+        	
+        }
+    }
 }
+

@@ -52,6 +52,26 @@
    WHERE USERID = #{userid} AND PASSWORD = #{password}
 </select>
 
+<!-- 현재 비밀번호 확인 -->
+<select id="getPasswordByUserId" parameterType="java.lang.String" resultType="java.lang.String">
+    SELECT PASSWORD FROM QUSER WHERE USERID = #{userid}
+</select>
+
+<!-- 사용자 정보 업데이트 -->
+<update id="updateUserInfo" parameterType="com.quocar.user.vo.UserVo">
+    UPDATE QUSER
+    SET
+        USER_NAME = #{username},
+        PASSWORD = #{password},
+        GENDER = #{gender},
+        EMAIL = #{email},
+        BIRTHDATE = #{birthdate},
+        CAR_MANUFACTURER = #{carManufacturer},
+        CAR_MODEL = #{carModel}
+    WHERE USERID = #{userid}
+</update>
+
+
 
      
 </mapper>

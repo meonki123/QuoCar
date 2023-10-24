@@ -23,4 +23,9 @@ public interface UserDao {
     // ID 중복 확인
     boolean checkIdDuplication(HashMap<String, Object> map);
 
+    void updateUserInfo(UserVo vo);
+
+	String getPasswordByUserId(String userId);
+
+
 }

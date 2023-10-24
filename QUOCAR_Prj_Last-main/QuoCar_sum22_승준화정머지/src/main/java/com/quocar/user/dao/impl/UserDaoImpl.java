@@ -52,5 +52,15 @@ public class UserDaoImpl implements UserDao {
     public void logout(HttpSession sessin) {
     }
     
+	@Override
+	public void updateUserInfo(UserVo vo) {
+	    sqlSession.update("User.updateUserInfo", vo);
+	}
+    
+	@Override
+    public String getPasswordByUserId(String userId) {
+        return sqlSession.selectOne("User.getPasswordByUserId", userId);
+    }
+	
 	}
 		

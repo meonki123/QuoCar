@@ -23,5 +23,8 @@ public interface UserService {
     
     // 아이디 중복 확인
     boolean checkIdDuplication(HashMap<String, Object> map);
+    
+    // 사용자 정보 업데이트
+	void updateUserInfo(UserVo vo);
 
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.quocar.user.service.UserService;
 import com.quocar.user.vo.UserVo;
@@ -102,9 +103,29 @@ public class UserController {
         return mav;
     }
     
+    // 마이페이지 화면
     @RequestMapping("/mypage")
     public String updateUser() {
 
       return "user/mypage";
     }
-}
+      
+    @RequestMapping("/updateUserInfo")
+    public String updateUserInfo(UserVo vo, RedirectAttributes redirectAttributes) {
+        try {
+            // 사용자 정보 업데이트
+            userService.updateUserInfo(vo);
+
+            // 업데이트 성공 메시지 설정
+            redirectAttributes.addFlashAttribute("successMessage", "사용자 정보가 성공적으로 업데이트되었습니다.");
+        } catch (IllegalArgumentException e) {
+            // 비밀번호 확인 오류 메시지 설정
+            redirectAttributes.addFlashAttribute("errorMessage", e.getMessage());
+        } catch (Exception e) {
+            // 업데이트 실패 메시지 설정
+            redirectAttributes.addFlashAttribute("errorMessage", "사용자 정보 업데이트 중 오류가 발생했습니다.");
+        }
+        return "redirect:/user/mypage";
+    }
+
+  }
