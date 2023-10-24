@@ -39,8 +39,8 @@ public class UserDaoImpl implements UserDao {
     // 01_01. 회원 로그인체크
     @Override
     public boolean loginCheck(UserVo vo) {
-        String name = sqlSession.selectOne("User.loginCheck", vo);
-        return (name == null) ? false : true;
+        String userid = sqlSession.selectOne("User.loginCheck", vo);
+        return (userid == null) ? false : true;
     }
     // 01_02. 회원 로그인 정보
     @Override
@@ -51,4 +51,6 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void logout(HttpSession sessin) {
     }
-}
+    
+	}
+		

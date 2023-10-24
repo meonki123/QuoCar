@@ -28,8 +28,15 @@
             // 제출
             document.form1.submit();
         });
+   
+    $("input").keypress(function(event) {
+        if (event.which === 13) {
+            event.preventDefault(); // 기본 동작 방지 (폼 제출 방지)
+            $("#btnLogin").click();  // 로그인 버튼 클릭 이벤트 호출
+        }
+      });
     });
-</script>
+</script> 
 </head>
 <body>
     <div class="login-container">

@@ -72,7 +72,7 @@ public class UserController {
     // 01. 로그인 화면 
     @RequestMapping("login")
     public String login(){
-        return "user/login";    // views/member/login.jsp로 포워드
+        return "user/login";    // views/user/login.jsp로 포워드
     }
     
     // 02. 로그인 처리
@@ -100,5 +100,11 @@ public class UserController {
         mav.setViewName("user/login");
         mav.addObject("msg", "logout");
         return mav;
+    }
+    
+    @RequestMapping("/mypage")
+    public String updateUser() {
+
+      return "user/mypage";
     }
 }

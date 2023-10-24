@@ -35,7 +35,11 @@ public class HomeController {
     public void insurance() {
     }
     
-
+    // 내 정보 페이지 이동
+    @RequestMapping("/mypage")
+    public void mypage() {
+    	
+    }
 }
 
 

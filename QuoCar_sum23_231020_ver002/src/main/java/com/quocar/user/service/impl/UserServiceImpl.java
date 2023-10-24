@@ -1,5 +1,6 @@
 package com.quocar.user.service.impl;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -49,6 +50,16 @@ public class UserServiceImpl implements UserService {
             // 세션 변수 등록
             session.setAttribute("userid", vo2.getUserid());
             session.setAttribute("username", vo2.getUsername());
+            session.setAttribute("gender", vo2.getGender());
+            session.setAttribute("email", vo2.getEmail());
+            
+            // 날짜 형식을 포맷팅하여 세션에 저장
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yy/MM/dd");
+            String formattedBirthdate = dateFormat.format(vo2.getBirthdate());
+            session.setAttribute("birthdate", formattedBirthdate);
+            session.setAttribute("carManufacturer", vo2.getCarManufacturer());
+            session.setAttribute("carModel", vo2.getCarModel());
+
         } 
         return result;
     }
@@ -65,4 +76,5 @@ public class UserServiceImpl implements UserService {
         // 세션 정보를 초기화 시킴
         session.invalidate();
     }
+
 }

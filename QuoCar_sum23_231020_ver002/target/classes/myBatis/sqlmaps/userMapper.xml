@@ -10,42 +10,49 @@
       ID,
       NAME,
       USERID,
+      USER_NAME,
       PASSWORD,
       GENDER,
       EMAIL,
       BIRTHDATE,
       CAR_MANUFACTURER,
-      CAR_MODEL,
-      USER_NAME
+      CAR_MODEL
     ) VALUES (
       (SELECT NVL(MAX(ID),0)+1 FROM QUSER ),
       #{name},
       #{userid},
+      #{username},
       #{password},
       #{gender},
       #{email},
       #{birthdate},
       #{carManufacturer},
-      #{carModel},
-      #{username}
+      #{carModel}
     )
   </insert>
  
 <select id="loginCheck" resultType="String">
-   SELECT NAME AS userName FROM QUSER
+   SELECT ID, NAME, USERID, USER_NAME, PASSWORD, GENDER, EMAIL, BIRTHDATE, CAR_MANUFACTURER, CAR_MODEL
+   FROM QUSER
    WHERE USERID = #{userid} AND PASSWORD = #{password}
 </select>
 
 <select id="viewUser" resultType="com.quocar.user.vo.UserVo">
    SELECT
-       NAME AS username,
+       NAME AS name,
        USERID AS userid,
-       EMAIL AS useremail,
-       BIRTHDATE AS userregdate
+       USER_NAME AS username,
+       PASSWORD AS password,
+       GENDER AS gender,
+       EMAIL AS email,
+       BIRTHDATE AS birthdate,
+       CAR_MANUFACTURER AS carManufacturer,
+       CAR_MODEL AS carModel
    FROM QUSER
    WHERE USERID = #{userid} AND PASSWORD = #{password}
 </select>
-  
+
+
      
 </mapper>
 
